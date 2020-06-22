@@ -323,13 +323,16 @@ bot.on('message', message=>{
         break;
 
         case '명령어':
-            message.channel.send('```APID에 와서 확인하세요 : https://discord.gg/duSaFYQ```');
-            const embed = new Discord.MessageEmbed()
-            .setTitle('명령어 목록')
-            .setColor(0xE62EA3)
-            .addField(PREFIX + '`명령어`', '입력 명령을 알려줍니다.', true)
-            .addField(PREFIX + '`랭크 <사용자 태그>`', '랭크 정보를 알려줍니다.');
-            message.channel.send(embed);
+            if(message.guild.id == 714752155377991731){
+                const embed = new Discord.MessageEmbed()
+                .setTitle('명령어 목록')
+                .setColor(0xE62EA3)
+                .addField(PREFIX + '`명령어`', '입력 명령을 알려줍니다.', true)
+                .addField(PREFIX + '`랭크 <사용자 태그>`', '랭크 정보를 알려줍니다.');
+                message.channel.send(embed);
+            }else{
+                message.channel.send('```APID에 와서 확인하세요 : https://discord.gg/duSaFYQ```');
+            }
         break;
         
 
